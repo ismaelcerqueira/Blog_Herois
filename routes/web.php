@@ -17,14 +17,16 @@ use Illuminate\Support\Facades\Route;
 //      return view('herois.index');
 //  });
 
- Route::get('/create', function () {
-    return view('herois.create');
-});
-Route::get('/', 'HeroisController@index')->name('index');
-Route::post('/create', 'HeroisController@create');
-Route::post('/store', 'HeroisController@store');
 
+// Route::get('/', 'HeroisController@index')->name('index');
+// Route::post('/create', 'HeroisController@create')->name('create');
+// Route::post('/store', 'HeroisController@store')->name('store');
+// Route::put('/edit/{id}', 'HeroisController@edit')->name('edit');
+// Route::get('/show/{id}', 'HeroisController@show')->name('show');
+// Route::put('/update/{id}', 'HeroisController@upgarde')->name('update');
+// Route::delete('/destoy/{id}', 'HeroisController@destroy')->name('destroy');
 
+Route :: resource ('herois', 'HeroisController');
 
 //   Route::get('/', 'EnderecosController@index')->name('index'); //Doc
 // Route::delete('/delete/{id}', 'EnderecosController@destroy')->name('delete'); //doc

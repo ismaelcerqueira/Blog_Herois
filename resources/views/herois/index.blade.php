@@ -7,7 +7,7 @@
                 <h2>Herois</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ url('/create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ action('HeroisController@create') }}"> Cadastrar</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
             <th>Nº</th>
             <th>Nome</th>
             <th>Poderes</th>
-            <th width="280px">Action</th>
+            <th>Fraquezas</th>
         </tr>
         @foreach($heroi as $herois)
         <tr>
@@ -33,16 +33,16 @@
             <td>{{ $herois->fraquezas }}</td>
 
             <td>
-                <form action="{ route('herois.destroy',$heroi->id) }}" method="POST">
-   
-                    <a class="btn btn-info" href="{ route('herois.show',$heroi->id) }}">Show</a>
-    
-                    <a class="btn btn-primary" href="{ route('herois.edit',$heroi->id) }}">Edit</a>
-   
+                <form action="{{ route('herois.destroy', $herois->id) }}" method="POST">
+                    
+                    <a class="btn btn-info" href="{{ route('herois.show',$herois->id) }}">Visualizar</a>
+
+                    <a class="btn btn-primary" href="{ route('herois.edit',$herois->id) }}">Editar</a>
+
                     @csrf
                     @method('DELETE')
-      
-                    <button type="submit" class="btn btn-danger">Delete</button>
+
+                    <button type="submit" class="btn btn-danger">Deletar</button>
                 </form>
             </td>
         </tr>

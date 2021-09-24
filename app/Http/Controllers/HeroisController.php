@@ -10,7 +10,6 @@ class HeroisController extends Controller
     public function index()
     {
         $heroi = Heroi::latest()->paginate(5);
-        // dd($heroi);
         return view('herois.index',compact('heroi'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
    
@@ -39,13 +38,13 @@ class HeroisController extends Controller
   
         Heroi::create($request->all());
    
-        return redirect()->route('index')->with('success','Heroi created successfully.');
+        return redirect()->route('index')->with('success','Heroi cadastrado com sucesso');
     }
    
     /**
      * Display the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Heroi  $heroi
      * @return \Illuminate\Http\Response
      */
     public function show(Heroi $heroi)
@@ -56,7 +55,7 @@ class HeroisController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Heroi  $heroi
      * @return \Illuminate\Http\Response
      */
     public function edit(Heroi $heroi)
@@ -68,7 +67,7 @@ class HeroisController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
+     * @param  \App\Heroi  $heroi
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Heroi $heroi)
@@ -81,13 +80,13 @@ class HeroisController extends Controller
         $heroi->update($request->all());
   
         return redirect()->route('herois.index')
-                        ->with('success','Product updated successfully');
+                        ->with('success','Herio editado com sucesso');
     }
   
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Heroi  $heroi
      * @return \Illuminate\Http\Response
      */
     public function destroy(Heroi $heroi)
