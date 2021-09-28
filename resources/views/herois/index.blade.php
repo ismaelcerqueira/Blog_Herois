@@ -7,7 +7,7 @@
                 <h2>Herois</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ action('HeroisController@create') }}"> Cadastrar</a>
+                <a class="btn btn-success" href="{{ route('herois.create') }}"> Cadastrar</a>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
                     
                     <a class="btn btn-info" href="{{ route('herois.show',$herois->id) }}">Visualizar</a>
 
-                    <a class="btn btn-primary" href="{ route('herois.edit',$herois->id) }}">Editar</a>
+                    <a class="btn btn-primary" href="{{ route('herois.edit',$herois->id) }}">Editar</a>
 
                     @csrf
                     @method('DELETE')

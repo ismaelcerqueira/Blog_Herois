@@ -36,9 +36,27 @@ class HeroisController extends Controller
             'poderes' => 'required',
         ]);
   
-        Heroi::create($request->all());
-   
-        return redirect()->route('index')->with('success','Heroi cadastrado com sucesso');
+        $heroi = new Heroi;
+
+        $heroi->nome = $request->nome;
+        $heroi->poderes = $request->poderes;
+        $heroi->fraquezas = $request->fraquezas;
+
+        // if($request->hasFile('image') && $request->file('image')->isValid()){
+
+        //     $requestImage = $request -> image;
+
+        //     $extension = $requestImage -> extension();
+
+        //     $imageName = $requestImage->getClientOriginalName() . '_' . strtotime("now") . '.' . $extension;
+
+        //     $requestImage->move(public_path('img/heroi'), $imageName);
+
+        //     $heroi->image = $imageName;
+        // }
+        
+        $heroi->save();
+        return redirect()->route('herois.index')->with('success','Heroi cadastrado com sucesso');
     }
    
     /**
@@ -73,14 +91,13 @@ class HeroisController extends Controller
     public function update(Request $request, Heroi $heroi)
     {
         $request->validate([
-            'name' => 'required',
+            'nome' => 'required',
             'poderes' => 'required',
         ]);
   
         $heroi->update($request->all());
   
-        return redirect()->route('herois.index')
-                        ->with('success','Herio editado com sucesso');
+        return redirect()->route('herois.index')->with('success','Heroi editado com sucesso');
     }
   
     /**
@@ -93,7 +110,6 @@ class HeroisController extends Controller
     {
         $heroi->delete();
   
-        return redirect()->route('herois.index')
-                        ->with('success','Product deleted successfully');
+        return redirect()->route('herois.index')->with('success','Herois deletado com sucesso');
     }
 }

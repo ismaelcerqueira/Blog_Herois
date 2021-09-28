@@ -18,6 +18,7 @@ class CreateHeroisTable extends Migration
             $table->string('nome');
             $table->text('poderes');
             $table->text('fraquezas');
+            $table->string('image');
             $table->timestamps();
         });
     }

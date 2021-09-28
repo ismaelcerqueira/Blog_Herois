@@ -18,17 +18,17 @@ use Illuminate\Support\Facades\Route;
 //  });
 
 
-// Route::get('/', 'HeroisController@index')->name('index');
-// Route::post('/create', 'HeroisController@create')->name('create');
-// Route::post('/store', 'HeroisController@store')->name('store');
-// Route::put('/edit/{id}', 'HeroisController@edit')->name('edit');
-// Route::get('/show/{id}', 'HeroisController@show')->name('show');
-// Route::put('/update/{id}', 'HeroisController@upgarde')->name('update');
-// Route::delete('/destoy/{id}', 'HeroisController@destroy')->name('destroy');
+// Route::get('/herois', 'HeroisController@index')->name('herois.index');
+// Route::get('/herois/create', 'HeroisController@create')->name('herois.create');
+// Route::post('/herois/store', 'HeroisController@store')->name('herois.store');
+// Route::get('/herois/edit/{id}', 'HeroisController@edit')->name('herois.edit');
+// Route::get('/herois/show/{id}', 'HeroisController@show')->name('herois.show');
+// Route::put('/herois/update/{id}', 'HeroisController@update')->name('herois.update');
+// Route::delete('/herois/destoy/{id}', 'HeroisController@destroy')->name('herois.destroy');
 
 Route :: resource ('herois', 'HeroisController');
 
-//   Route::get('/', 'EnderecosController@index')->name('index'); //Doc
+// Route::get('/', 'EnderecosController@index')->name('index'); //Doc
 // Route::delete('/delete/{id}', 'EnderecosController@destroy')->name('delete'); //doc
 // Route::post('/', 'EnderecosController@store')->name('store'); //doc
 // Route::put('/update/{id}', 'EnderecosController@update')->name('update'); //doc

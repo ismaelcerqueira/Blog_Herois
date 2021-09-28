@@ -7,7 +7,7 @@
                 <h2>Heroi</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ url('/herois') }}"> Voltar</a>
+                <a class="btn btn-primary" href="{{ route('herois.index') }}"> Voltar</a>
             </div>
         </div>
     </div>
@@ -23,6 +23,12 @@
             <div class="form-group">
                 <strong>Poderes:</strong>
                 {{ $heroi->poderes }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Fraquezas:</strong>
+                {{ $heroi->fraquezas }}
             </div>
         </div>
     </div>

@@ -4,17 +4,17 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Product</h2>
+                <h2>Editar Heroi</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('herois.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('herois.index') }}"> Voltar</a>
             </div>
         </div>
     </div>
    
     @if ($errors->any())
         <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <strong>Oops!</strong> Houve algum problema com seu cadastro.<br><br>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -30,18 +30,24 @@
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $heroi->name }}" class="form-control" placeholder="Name">
+                    <strong>Nome:</strong>
+                    <input type="text" name="nome" value="{{ $heroi->nome }}" class="form-control" placeholder="Nome">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Detail:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $heroi->detail }}</textarea>
+                    <strong>Poderes:</strong>
+                    <textarea class="form-control" style="height:50px" name="poderes" placeholder="Poderes">{{ $heroi->poderes }}</textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Fraquezas:</strong>
+                    <textarea class="form-control" style="height:50px" name="fraquezas" placeholder="Fraquezas">{{ $heroi->fraquezas }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
    

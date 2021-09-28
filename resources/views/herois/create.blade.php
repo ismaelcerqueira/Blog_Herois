@@ -7,14 +7,14 @@
             <h2>Adicionar um novo heroi: </h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ url('/') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('herois.index') }}"> Voltar</a>
         </div>
     </div>
 </div>
    
 @if ($errors->any())
     <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <strong>Oops!</strong> Houve algum problema com seu cadastro.<br><br>
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -23,7 +23,7 @@
     </div>
 @endif
    
-<form action="{{ url('/store') }}" method="POST">
+<form action="{{ route('herois.store') }}" method="POST">
     @csrf
   
      <div class="row">
@@ -45,8 +45,18 @@
                 <textarea class="form-control" name="fraquezas" placeholder="Fraquezas"></textarea>
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="image"><strong>Imagem do Heroi: </strong></label>
+                <input type="file" class="from-control" name="image" id="image">
+            </div>
+        </div>
+
+
+        
+        </form>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary" href=>Enviar</button>
         </div>
     </div>
    
