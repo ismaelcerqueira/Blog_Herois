@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//  Route::get('/index', function () {
-//      return view('herois.index');
-//  });
-
-
 // Route::get('/herois', 'HeroisController@index')->name('herois.index');
 // Route::get('/herois/create', 'HeroisController@create')->name('herois.create');
 // Route::post('/herois/store', 'HeroisController@store')->name('herois.store');
@@ -27,9 +22,3 @@ use Illuminate\Support\Facades\Route;
 // Route::delete('/herois/destoy/{id}', 'HeroisController@destroy')->name('herois.destroy');
 
 Route :: resource ('herois', 'HeroisController');
-
-// Route::get('/', 'EnderecosController@index')->name('index'); //Doc
-// Route::delete('/delete/{id}', 'EnderecosController@destroy')->name('delete'); //doc
-// Route::post('/', 'EnderecosController@store')->name('store'); //doc
-// Route::put('/update/{id}', 'EnderecosController@update')->name('update'); //doc
-// Route::get('/{id}', 'EnderecosController@show')->name('show'); //doc
