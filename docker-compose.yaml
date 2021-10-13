@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+    laravel-app:
+        build: .
+        ports:
+         - "8000:80"
+        volumes:
+         - ./:/usr/share/nginx
+        networks:
+         - app-network
+    
+    mysql-app:
+        image: mysql:5.7
+        ports:
+         - "3306:3306"
+        environment:
+            MYSQL_DATABASE: herois
+            MYSQL_ROOT_PASSWORD: herois
+        networks:
+         - app-network
+
+networks:
+    app-network:
+        driver: bridge
